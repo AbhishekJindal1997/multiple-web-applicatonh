@@ -1,0 +1,141 @@
+.App {
+  color: aliceblue;
+}
+
+.navbar {
+  background-color: #060b26;
+  padding: 20px 20px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+nav {
+  align-items: center;
+  justify-content: start;
+}
+
+.nav-menu {
+  background-color: #060b26;
+  width: fit-content;
+  padding-right: 20px;
+  margin-top: 0px;
+  list-style-type: none;
+  position: fixed;
+  left: -100%;
+  height: 100vh;
+  transition: 1s;
+  top: 0;
+  z-index: +2;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-bars {
+  color: white;
+}
+
+.active {
+  left: 0%;
+  transition: 1s;
+}
+
+.nav-text {
+  justify-content: start;
+  align-items: center;
+  padding: 20px 0px;
+  color: white;
+  font-size: 1.1em;
+  margin-top: 20px;
+}
+
+.nav-text a {
+  text-decoration: none;
+  color: white;
+  border-radius: 4px;
+  padding: 10px 16px;
+}
+
+.nav-text a:hover {
+  background-color: #1a83ff;
+}
+
+.nav-menu-items {
+  width: 100%;
+}
+
+.navbar-toggle {
+  background-color: #060b26;
+  padding: 0px 20px;
+}
+
+span {
+  margin-left: 16px;
+}
+
+header,
+form {
+  text-align: center;
+}
+
+.select {
+  display: inline-block;
+}
+
+.filter-todo,
+.todo-input {
+  height: 35px;
+}
+
+.todo-button {
+  margin-right: 25px;
+  background-color: tomato;
+  height: 40px;
+  border: 0;
+}
+
+.todo-container {
+  width: fit-content;
+  margin: auto;
+  color: black;
+  height: 25px;
+  margin-top: 50px;
+}
+
+.todo-contain {
+  display: flex;
+  width: 300px;
+  margin-bottom: 10px;
+}
+
+.todo {
+  background-color: white;
+  width: 60%;
+  display: block;
+  height: 30px;
+}
+
+.todo-item {
+  display: block;
+  font-weight: bolder;
+  font-size: 1.4em;
+}
+
+.complete-btn {
+  background-color: rgb(43, 126, 43);
+  color: white;
+  height: 30px;
+  border: 0;
+}
+
+.trash-btn {
+  background-color: tomato;
+  height: 30px;
+  border: 0;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
