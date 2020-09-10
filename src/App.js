@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from "react";
-import "./App.css";
+import Home from "./pages/Home";
+import calculator from "./pages/calculator";
 import Form from "./components/Form";
-import TodoList from "./components/TodoList";
-import Navbar from "./components/Navbar";
+import "./App.css";
+import TodoList from "./components//TodoList";
+import Navbar from "./components//Navbar";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
@@ -10,7 +12,7 @@ function App() {
   const [todos, setTodos] = useState([]);
   const [status, setStatus] = useState("all");
   const [flteredTodos, setFilteredTodos] = useState([]);
-  // RUn Once when the app starts
+  // RUn Once when the App starts
   useEffect(() => {
     getLocalTodos();
   }, []);
@@ -53,7 +55,8 @@ function App() {
       <Router>
         <Navbar />
         <Switch>
-          <Route path='/' />
+          <Route path='/Home' exact components={Home} />
+          <Route path='/calculator' exact components={calculator} />
         </Switch>
       </Router>
       <header>
