@@ -4,20 +4,14 @@ import * as FcIcons from "react-icons/fc";
 
 export const SidebarData = [
   {
-    title: "Home",
-    path: "/Home",
+    title: "TodoList",
+    path: "./TodoList",
     icon: <AiIcons.AiFillHome />,
     cName: "nav-text",
   },
   {
-    title: "Todo-List",
-    path: "/todo",
-    icon: <FcIcons.FcTodoList />,
-    cName: "nav-text",
-  },
-  {
-    title: "Calculator",
-    path: "/calculator",
+    title: "calculator",
+    path: "./calculator",
     icon: <AiIcons.AiFillCalculator />,
     cName: "nav-text",
   },

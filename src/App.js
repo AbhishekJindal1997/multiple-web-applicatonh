@@ -1,79 +1,21 @@
-import React, { useState, useEffect } from "react";
-import Home from "./pages/Home";
-import calculator from "./pages/calculator";
-import Form from "./components/Form";
-import "./App.css";
-import TodoList from "./components//TodoList";
-import Navbar from "./components//Navbar";
+import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import TodoListPage from "./pages/TodoListPage";
+import calculator from "./pages/calculator";
+import "./App.css";
+import Navbar from "./components/Navbar";
 
 function App() {
-  const [inputText, setInputText] = useState("");
-  const [todos, setTodos] = useState([]);
-  const [status, setStatus] = useState("all");
-  const [flteredTodos, setFilteredTodos] = useState([]);
-  // RUn Once when the App starts
-  useEffect(() => {
-    getLocalTodos();
-  }, []);
-  //Use Effect
-  useEffect(() => {
-    filterHandler();
-    saveLocalTodos();
-  }, [todos, status]);
-  // Functions
-  const filterHandler = () => {
-    switch (status) {
-      case "completed":
-        setFilteredTodos(todos.filter((todo) => todo.completed === true));
-        break;
-      case "uncompleted":
-        setFilteredTodos(todos.filter((todo) => todo.completed === false));
-        break;
-      default:
-        setFilteredTodos(todos);
-        break;
-    }
-  };
-
-  // save to local storage
-  const saveLocalTodos = () => {
-    localStorage.setItem("todos", JSON.stringify(todos));
-  };
-
-  const getLocalTodos = () => {
-    if (localStorage.getItem("todos") === null) {
-      localStorage.setItem("todos", JSON.stringify([]));
-    } else {
-      let local = JSON.parse(localStorage.getItem("todos"));
-      setTodos(local);
-    }
-  };
-
   return (
     <div className='App'>
       <Router>
         <Navbar />
         <Switch>
-          <Route path='/Home' exact components={Home} />
-          <Route path='/calculator' exact components={calculator} />
+          <Route path='/TodoList' exact component={TodoListPage} />
+          <Route path='/calculator' component={calculator} />
         </Switch>
       </Router>
-      <header>
-        <h1>Todo List</h1>
-      </header>
-      <Form
-        todos={todos}
-        setTodos={setTodos}
-        setInputText={setInputText}
-        inputText={inputText}
-        setStatus={setStatus}
-      />
-      <TodoList
-        filteredTodos={flteredTodos}
-        todos={todos}
-        setTodos={setTodos}
-      />
     </div>
   );
 }
