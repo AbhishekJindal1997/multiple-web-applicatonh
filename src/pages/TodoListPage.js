@@ -43,8 +43,8 @@ function TodoListPage() {
     }
   };
   return (
-    <div>
-      <header>Todo List</header>
+    <div className='TodoPageList'>
+      <h1>Todo List</h1>
       <Form
         todos={todos}
         setTodos={setTodos}

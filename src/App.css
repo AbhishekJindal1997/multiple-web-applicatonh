@@ -3,7 +3,7 @@
 }
 
 .Home,
-.todoPage,
+.TodoPageList,
 .calculator {
   align-self: center;
   text-align: center;
@@ -81,7 +81,6 @@ span {
   margin-left: 16px;
 }
 
-header,
 form {
   text-align: center;
 }
